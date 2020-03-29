@@ -14,16 +14,18 @@
 ### 课程三
     * devServer 热更新 代理 重定向 css less sass loader  图片的插件的引入 
      图片base 64的转换与否
+### 课程四 
+    * 配置react开发环境
 ## 课程一
 项目。webpack：基于NODE.JS的是一个打包工具。
 作用：
-    1、优化：工程化。vue,react cli
-    2、打包:将多个文件进行压缩，打包成一个文件.
-    3、转换：es6,ts,jsx,less,sass
+    * 优化：工程化。vue,react cli
+    * 打包:将多个文件进行压缩，打包成一个文件.
+    * 转换：es6,ts,jsx,less,sass
 目标：
-    1、可能通过webpack对公司现有的项目进行从0开始的搭建。
-    2、可能对vue,react脚手架进行添加与修改的操作。
-    webpack当中的一些原理，流程。
+    * 可能通过webpack对公司现有的项目进行从0开始的搭建。
+    * 可能对vue,react脚手架进行添加与修改的操作。
+    * webpack当中的一些原理，流程。
 ***
 webpack结构：
     1、入口：entry
@@ -61,12 +63,14 @@ webpack:命令
     webpack src/one.js src/two.js  --mode development --output haha.js
 ***
 package.js:在项目的根目录当中增加该文件
+
     npm init -y
     {
       "scripts":{
           "build":"webpack src/one.js src/two.js --output my/haha.js  --mode development"
       }
     }
+
 可以通过npm run build进行打包，相当于webpack src/one.js src/two.js --output my/haha.js  --mode development
 ***
 webpack.config.js
@@ -126,16 +130,23 @@ module.exports = {
     3、使用
     //
     const  {CleanWebpackPlugin}  = require("clean-webpack-plugin");
+
     const HtmlWebpackPlugin = require("html-webpack-plugin");
+
     module.exports = {
+
         mode:"development",
+
         entry:{
             "index":"./src/main.js"
         },
+
         output:{
             filename:"[name].bundle.js"
         },
+
         // plugins类型是一个数组。该数组的每一个元素是你要使用的plugin(插件)
+
         plugins:[
             new CleanWebpackPlugin(),
             new HtmlWebpackPlugin({
@@ -143,4 +154,5 @@ module.exports = {
                 filename: "home.html",// 将打包后的文件名字进行重置，默认是index.html
             })
         ]
+        
     }

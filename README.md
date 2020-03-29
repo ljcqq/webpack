@@ -10,7 +10,10 @@
     * demo1 配置出口文件路径和文件名
     * demo2 打包的多入口和多出口
     * demo3 引入插件clean-webpack-plugin 打包完成后自动删除上次的内容
-    * demo4 引入插件html-webpack-plugin 配置打包的html文件
+    * demo4 引入插件html-webpack-plugin 配置打包的html文件打包后的文件并引入相应的js文件 依赖webpack webpack-cli
+### 课程三
+    * devServer 热更新 代理 重定向 css less sass loader  图片的插件的引入 
+     图片base 64的转换与否
 ## 课程一
 项目。webpack：基于NODE.JS的是一个打包工具。
 作用：

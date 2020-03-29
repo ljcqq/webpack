@@ -1,0 +1,18 @@
+QQ群：1030300868  获得公开课资料。 1030300868  zhangpeiyue
+public:index.html-->模板
+src:开发环境
+******************************************
+devServer: 可以通过该属性设置webpack当中的服务。
+    vue react.  开发与生产环境。
+        两个内容：
+            服务代理。
+                proxy->
+            地址重定向。 ----》 单页面应用。
+安装：
+    cnpm install webpack-dev-server -g
+    可以在命令行当中运行webpack-dev-server
+********************************************************
+目标：
+    模拟REACT脚手架。
+       路由  服务代理  各种引入   css less sass 图片
+       import css

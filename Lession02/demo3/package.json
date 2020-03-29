@@ -1,0 +1,11 @@
+{
+  "name": "demo3",
+  "version": "1.0.0",
+  "dependencies": {},
+  "scripts": {
+    "build": "webpack --config shufu.config.js"
+  },
+  "devDependencies": {
+    "html-webpack-plugin": "^3.2.0"
+  }
+}

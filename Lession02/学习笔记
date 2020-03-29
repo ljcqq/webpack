@@ -1,0 +1,71 @@
+1、webpack
+    4.x
+**********************************
+zhangpeiyue.  1921 1924
+**********************************
+* 运行webpack命令时，该命令需要与webpack.config同级别。
+* 如果名字不为webpack.config.js,比如：shufu.config.js  可以通过 webpack --config shufu.config.js
+demo.js:   在打包某一个JS时，会将该JS相依赖的文件一起打包。
+*******************将多个文件打包成一个。多入口单出口******************************************************
+demo2.js: 将多个JS进行打包
+    module.exports = {
+        mode:"development",
+        // 设置成一个数组,数组当中的每一个元素即是打包的文件。
+        entry:["./src/one.js","./src/two.js"],
+        output:{
+            filename:"bundle.js"
+        }
+    }
+***************************多入口多出口******************************************
+module.exports = {
+    mode:"development",
+    // 设置成一个数组,数组当中的每一个元素即是打包的文件。
+    // 可以是字符串，数组，对象
+    entry:{
+        one:"./src/one.js",
+        two:"./src/two.js"
+    },
+    output:{
+        // 将入口entry对象的属性名，替换[name]
+        filename:"[name].bundle.js"
+    }
+}
+****************************************************************************
+可以实现在打包时，清空原有的内容。demo3.
+1、clean-webpack-plugin
+    1、下载
+        cnpm install clean-webpack-plugin -D
+    2、引入
+        const  {CleanWebpackPlugin}  = require("clean-webpack-plugin");
+    3、使用
+        plugins:[
+            new CleanWebpackPlugin()
+        ]
+*******************************************************************************
+1、html-webpack-plugin:插件需要依赖 webpack webpack-cli
+    1、下载
+        cnpm install webpack webpack-cli -D
+        cnpm install html-webpack-plugin -D
+    2、引入
+        const HtmlWebpackPlugin  = require("html-webpack-plugin")
+    3、使用
+    //
+    const  {CleanWebpackPlugin}  = require("clean-webpack-plugin");
+    const HtmlWebpackPlugin = require("html-webpack-plugin");
+    module.exports = {
+        mode:"development",
+        entry:{
+            "index":"./src/main.js"
+        },
+        output:{
+            filename:"[name].bundle.js"
+        },
+        // plugins类型是一个数组。该数组的每一个元素是你要使用的plugin(插件)
+        plugins:[
+            new CleanWebpackPlugin(),
+            new HtmlWebpackPlugin({
+                template:"./public/index.html",// 指定模板地址
+                filename: "home.html",// 将打包后的文件名字进行重置，默认是index.html
+            })
+        ]
+    }

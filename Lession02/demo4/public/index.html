@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><%= htmlWebpackPlugin.options.title%></title>
+</head>
+<body>
+    <div>
+        <div id="root"></div>
+        <!--我是一个模板呀，模板！-->
+        <%for(let i=0;i<htmlWebpackPlugin.options.arr.length;i++){%>
+            <h3><%=htmlWebpackPlugin.options.arr[i]%></h3>
+        <%}%>
+        你在或不在，我都在这里，你快或不快，我都这样。你慢或不慢，跑不起。
+    </div>
+</body>
+</html>
